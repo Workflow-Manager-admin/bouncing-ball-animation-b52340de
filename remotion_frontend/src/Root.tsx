@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { BouncingBallExport } from "./BouncingBallExport";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -39,6 +40,19 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           logoColor1: "#91dAE2" as const,
           logoColor2: "#86A8E7" as const,
+        }}
+      />
+
+      <Composition
+        id="BouncingBallExport"
+        component={BouncingBallExport}
+        durationInFrames={180}
+        fps={30}
+        width={700}
+        height={480}
+        defaultProps={{
+          bounceHeight: 250,
+          bounceSpeed: 1.2,
         }}
       />
     </>
